@@ -1,5 +1,9 @@
 package com.design.mode.factory.entity;
 
+import com.design.mode.factory.entity.abs.ingredient.*;
+
+import java.util.Arrays;
+
 /**
  * @author 刘少武
  * @version 0.0.1
@@ -7,8 +11,17 @@ package com.design.mode.factory.entity;
  * @description 披萨
  */
 public abstract class Pizza {
-    String name;
+    protected String name;
+    protected Dough dough;
+    protected Sauce sauce;
+    protected Veggies[] veggies;
+    protected Cheese cheese;
+    protected Pepperoni pepperoni;
+    protected Clams clams;
 
+    /**
+     * 制作前 准备
+     */
     public abstract void prepare();
 
     public void bake() {
@@ -31,8 +44,24 @@ public abstract class Pizza {
         this.name = name;
     }
 
+    @Override
     public String toString() {
+
         //打印披萨
-        return "";
+        return name + "\r\n"
+                + "ingredient table：\r\n"
+                + ingredient("dough", dough)
+                + ingredient("sauce", sauce)
+                + ingredient("veggies", veggies != null ? Arrays.toString(veggies) : null)
+                + ingredient("cheese", cheese)
+                + ingredient("pepperoni", pepperoni)
+                + ingredient("clams", clams);
+    }
+
+    String ingredient(String title, Object val) {
+        if (val == null || "".equals(val.toString().trim())) {
+            return "";
+        }
+        return title + "：" + val + "\r\n";
     }
 }

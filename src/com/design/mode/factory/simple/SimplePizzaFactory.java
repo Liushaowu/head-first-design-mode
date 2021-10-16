@@ -1,5 +1,6 @@
 package com.design.mode.factory.simple;
 
+import com.design.mode.factory.common.Constant;
 import com.design.mode.factory.entity.*;
 import com.design.mode.factory.entity.simple.CheesePizza;
 import com.design.mode.factory.entity.simple.ClamPizza;
@@ -16,13 +17,13 @@ public class SimplePizzaFactory {
 
     public static Pizza createPizza(String type) {
         Pizza pizza = null;
-        if ("cheese".equals(type)) {
+        if (Constant.CHEESE.equals(type)) {
             return new CheesePizza();
-        } else if ("pepperoni".equals(type)) {
+        } else if (Constant.PEPPERONI.equals(type)) {
             return new PepperoniPizza();
-        } else if ("clam".equals(type)) {
+        } else if (Constant.CLAM.equals(type)) {
             return new ClamPizza();
-        } else if ("veggie".equals(type)) {
+        } else if (Constant.VEGGIE.equals(type)) {
             return new VeggiePizza();
         }
         return pizza;

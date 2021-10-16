@@ -11,7 +11,7 @@ import com.design.mode.factory.entity.function.*;
  */
 public class ChicagoStylePizzaStore extends PizzaStore{
     @Override
-    Pizza createPizza(String type) {
+    protected Pizza createPizza(String type) {
         Pizza pizza = null;
         if ("cheese".equals(type)) {
             return new ChicagoStyleCheesePizza();

@@ -1,3 +1,7 @@
+
+# DUCK 类图
+    使用 typore 打开
+
 ```mermaid
 classDiagram
 	FlyBehavior <|.. FlyNoWay

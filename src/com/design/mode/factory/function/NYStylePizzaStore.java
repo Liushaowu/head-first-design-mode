@@ -1,6 +1,7 @@
 package com.design.mode.factory.function;
 
 import com.design.mode.factory.entity.*;
+import com.design.mode.factory.entity.function.NYStyleCheesePizza;
 import com.design.mode.factory.entity.function.NYStyleClamPizza;
 import com.design.mode.factory.entity.function.NYStylePepperoniPizza;
 import com.design.mode.factory.entity.function.NYStyleVeggiePizza;
@@ -14,7 +15,7 @@ import com.design.mode.factory.entity.function.NYStyleVeggiePizza;
 public class NYStylePizzaStore extends PizzaStore {
 
     @Override
-    Pizza createPizza(String type) {
+    protected Pizza createPizza(String type) {
         Pizza pizza = null;
         if ("cheese".equals(type)) {
             return new NYStyleCheesePizza();
