@@ -57,6 +57,7 @@ public class RemoteLoader {
         remoteControl.onButtonWasPushed(4);
         remoteControl.offButtonWasPushed(4);
         remoteControl.undoButtonWasPushed();
+        System.out.println();
         //状态撤销
         CeilingFanHighCommand ceilingFanHigh = new CeilingFanHighCommand(ceilingFan);
         CeilingFanMediumCommand ceilingFanMedium = new CeilingFanMediumCommand(ceilingFan);
@@ -72,13 +73,18 @@ public class RemoteLoader {
         remoteControl.onButtonWasPushed(7);
         remoteControl.offButtonWasPushed(7);
 
+        System.out.println("\n============= 宏命令 =============\n");
         //宏命令
-        Command[] macroOn = {livingRoomLightOn, kitchenLightOn, ceilingFanOn, stereoOnWithCD};
+        Command[] macroOn = {livingRoomLightOn, kitchenLightOn, ceilingFanHigh, stereoOnWithCD};
         Command[] macroOff = {livingRoomLightOff, kitchenLightOff, ceilingFanOff, stereoOff};
         MacroCommand macroOnCommand = new MacroCommand(macroOn);
         MacroCommand macroOffCommand = new MacroCommand(macroOff);
         remoteControl.setCommand(8, macroOnCommand, macroOffCommand);
         remoteControl.onButtonWasPushed(8);
+        System.out.println();
         remoteControl.offButtonWasPushed(8);
+        System.out.println();
+        remoteControl.undoButtonWasPushed();
+
     }
 }
