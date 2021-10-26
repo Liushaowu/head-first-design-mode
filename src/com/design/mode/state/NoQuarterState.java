@@ -15,7 +15,6 @@ public class NoQuarterState implements State {
 
     @Override
     public void insertQuarter() {
-        System.out.println("You cant't insert another quarter");
         gumballMachine.setState(gumballMachine.getHasQuarterState());
     }
 
@@ -26,11 +25,16 @@ public class NoQuarterState implements State {
 
     @Override
     public void turnCrank() {
-        System.out.println("You turned ....");
+        System.out.println("Sorry , You haven't put in 25 cents yet");
     }
 
     @Override
     public void dispense() {
         System.out.println("No gumball dispensed");
+    }
+
+    @Override
+    public String toString() {
+        return "NoQuarterState{}";
     }
 }

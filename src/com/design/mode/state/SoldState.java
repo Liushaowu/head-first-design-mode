@@ -21,7 +21,6 @@ public class SoldState implements State {
     @Override
     public void ejectQuarter() {
         System.out.println("Sorry, you already turned the crank");
-
     }
 
     @Override
@@ -36,7 +35,12 @@ public class SoldState implements State {
             gumballMachine.setState(gumballMachine.getNoQuarterState());
         } else {
             System.out.println("Oops,out of gumballs!");
-            gumballMachine.setState(gumballMachine.soldOutState);
+            gumballMachine.setState(gumballMachine.getSoldOutState());
         }
+    }
+
+    @Override
+    public String toString() {
+        return "SoldState{}";
     }
 }

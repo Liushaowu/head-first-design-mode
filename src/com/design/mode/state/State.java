@@ -7,11 +7,23 @@ package com.design.mode.state;
  * @description 状态
  */
 public interface State {
+    /**
+     * 投币
+     **/
     void insertQuarter();
 
+    /**
+     * 退币
+     **/
     void ejectQuarter();
 
+    /**
+     * 转动曲柄曲柄
+     **/
     void turnCrank();
 
+    /**
+     * 发放糖果
+     **/
     void dispense();
 }

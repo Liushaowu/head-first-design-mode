@@ -15,21 +15,27 @@ public class SoldOutState implements State {
 
     @Override
     public void insertQuarter() {
-
+        System.out.println("Sorry,we're out of stock");
     }
 
     @Override
     public void ejectQuarter() {
-
+        System.out.println("Sorry,we're out of stock");
     }
 
     @Override
     public void turnCrank() {
         System.out.println("Sorry,we're out of stock");
+        gumballMachine.ejectQuarter();
     }
 
     @Override
     public void dispense() {
+        System.out.println("Sorry,we're out of stock");
+    }
 
+    @Override
+    public String toString() {
+        return "SoldOutState{}";
     }
 }
