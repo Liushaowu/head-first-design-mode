@@ -1,10 +1,8 @@
-package com.design.mode.proxy.remote;
+package com.design.mode.proxy.virtual;
 
 
 import javax.swing.*;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Enumeration;

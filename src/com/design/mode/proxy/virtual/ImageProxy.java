@@ -1,4 +1,4 @@
-package com.design.mode.proxy.remote;
+package com.design.mode.proxy.virtual;
 
 import javax.swing.*;
 import java.awt.*;
